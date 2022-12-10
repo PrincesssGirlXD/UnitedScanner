@@ -1,13 +1,13 @@
-from Scanner.plugins.stats import get_readable_time
+from UnitedScanner.plugins.stats import get_readable_time
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 import time
 from datetime import datetime
 
-from Scanner.utils.filters import command
-from Scanner.vars import SUPPORT_CHAT
-from Scanner import BOT_USERNAME, starttime
+from UnitedScanner.utils.filters import command
+from UnitedScanner.config import SUPPORT_CHAT
+from UnitedScanner import BOT_USERNAME, starttime
 
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
@@ -21,28 +21,20 @@ TIME_DURATION_UNITS = (
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
-    await message.reply_text(
-        f"""ᴡᴇʟᴄᴏᴍᴇ : {message.from_user.mention()}
-
-I am a scanner, use me to gban user in muiltiple bots at the same time.
-
-Usage:
-    /start
-    /scan -id (id) -r (reason)  -p (proof link)
-    /revert -id (id)
-    /gscan (reason)
-    /grevert
-    /stats
-    /ping
-    /sudos
+    await message.reply_text("United Scanner Starting ✨")
+    await message.sleep(1)
+    await message.delete()
+    await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
+        f"""Hᴇʟʟᴏ {message.from_user.mention()}
+I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
 """,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🆘 ʜᴇʟᴘ", url=f"https://t.me/{SUPPORT_CHAT}"),
+                        "Support", url=f"https://t.me/{SUPPORT_CHAT}"),
                     InlineKeyboardButton(
-                        "✚ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴀᴅᴅ ᴍᴇ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "Add Me To Your Group", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],
            ]
         ),
@@ -50,6 +42,21 @@ Usage:
 
 @Client.on_message(command("start") & ~filters.private)
 async def start_grp(client: Client, message: Message):
-    botuptime = get_readable_time((time.time() - starttime))
-    await message.reply_text(
-        f"Hey {message.from_user.mention()}, I'm here for you at {message.chat.title} since : `{botuptime}`")
+    await message.reply_text("United Scanner Starting ✨")
+    await message.sleep(1)
+    await message.delete()
+    await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
+        f"""Hᴇʟʟᴏ {message.from_user.mention()}
+I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
+""",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Support", url=f"https://t.me/{SUPPORT_CHAT}"),
+                    InlineKeyboardButton(
+                        "Add Me To Your Group", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                ],
+           ]
+        ),
+    )
