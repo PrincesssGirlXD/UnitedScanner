@@ -44,9 +44,10 @@ async def load_start():
     except Exception as e:
         LOGGER.info(f"UserBot wasn't able to semd message in your log channel.\n\nERROR: {e}")
     
-
-loop = asyncio.get_event_loop_policy().get_event_loop()
-loop.run_until_complete(load_start())
+loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(load_start())
+    loop.close()
 
 Client(
     name="United",
