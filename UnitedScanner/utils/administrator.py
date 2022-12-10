@@ -1,8 +1,8 @@
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from Scanner import pbot
-from Scanner.vars import SUDO_USERS
+from UnitedScanner import pbot
+from UnitedScanner.config import INSPECTORS
 
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
@@ -56,6 +56,6 @@ async def adminsOnly(permission, message):
         return await unauthorised(message)
     userID = message.from_user.id
     permissions = await member_permissions(chatID, userID)
-    if userID not in SUDO_USERS and permission not in permissions:
+    if userID not in INSPECTORS and permission not in permissions:
         return await unauthorised(message)
     return await authorised(message)
