@@ -4,12 +4,12 @@ import time
 from aiohttp import ClientSession
 from pyrogram import Client
 
-from Scanner.vars import API_HASH, API_ID, BOT_TOKEN, SESSION_STRING
+from UnitedScanner.config import API_HASH, API_ID, BOT_TOKEN, SESSION_STRING
 
 starttime = time.time()
 
 # enable logging
-FORMAT = "[Scanner] %(message)s"
+FORMAT = "[UnitedScanner] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("Scanner_logs.txt"), logging.StreamHandler()],
     level=logging.INFO,
@@ -19,11 +19,11 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
 
-LOGGER = logging.getLogger('[Scanner]')
-LOGGER.info("Scanner is starting. | Built by SOME1HING. | Licensed under GPLv3.")
-LOGGER.info("Handled by: github.com/SOME-1HING (t.me/SOME1HING)")
+LOGGER = logging.getLogger('[UnitedScanner]')
+LOGGER.info("UnitedScanner is starting. | Built by DragonEyeGaming.")
+LOGGER.info("Handled by: github.com/Princesssgirlxd (t.me/DragonEyeGaming)")
 
-pbot = Client("Scanner", API_ID, API_HASH, bot_token=BOT_TOKEN)
+pbot = Client("UnitedScanner", API_ID, API_HASH, bot_token=BOT_TOKEN)
 ubot = Client("Client", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
 
 aiohttpsession = ClientSession()
