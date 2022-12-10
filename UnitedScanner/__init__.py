@@ -4,7 +4,7 @@ import time
 from aiohttp import ClientSession
 from pyrogram import Client
 
-from UnitedScanner import API_HASH, API_ID, BOT_TOKEN, SESSION_STRING
+from UnitedScanner.config import API_HASH, API_ID, BOT_TOKEN, SESSION_STRING
 
 starttime = time.time()
 
