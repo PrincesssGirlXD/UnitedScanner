@@ -54,7 +54,6 @@ Client(
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
     workers=min(32, os.cpu_count() + 4),
-    parse_mode=ParseMode.DEFAULT,
     workdir=DOWNLOAD_DIRECTORY,
     sleep_threshold=60,
     in_memory=True,
