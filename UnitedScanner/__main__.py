@@ -4,7 +4,7 @@ import requests
 
 from pyrogram import Client
 
-from UnitedScanner import LOGGER, pbot, ubot, tbot
+from UnitedScanner import LOGGER, pbot, ubot
 #from UnitedScanner.db.global_bans_db import num_gbanned_users
 
 SESSION_STRING = os.environ.get("SESSION_STRING", "BQChC24XXMTx_IQNjvyLiNEG4QYgiS53PW9hMje9hMIEGkAullljnud79tY1K7IoDPCsLoZKkW0W0QQoWVT7-B_UTdvfhIokJjzN51NrNzNV7N0JSAHffuDiHA4y8Jw6PyXBoPq5kjqThDNKK3w4hdj4oawADKLYbB3iHTMb00n6K7EleEht4jnxpXNueQrpQlXxYr3LPVg30St5_Qak-cyUOzuZg3aULGmVB65SHKXLyUDMGcS90FCc6oL2e8GMdZlQqqGVf2bmAj_ojjrtMtahJGg3t8QmUvzZPBhAQmXZONGINEHYiIgHknfPlQ11RLGW4XoqfTvIqQg7U0mBgVI4AAAAAHNm18YA")
