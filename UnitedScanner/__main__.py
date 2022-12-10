@@ -5,7 +5,7 @@ from pyrogram import Client
 
 from UnitedScanner import LOGGER, pbot, ubot, tbot
 #from UnitedScanner.db.global_bans_db import num_gbanned_users
-from UnitedScanner.config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL_ID
+from UnitedScanner.config import *
 
 async def load_start():
     count = num_gbanned_users()
