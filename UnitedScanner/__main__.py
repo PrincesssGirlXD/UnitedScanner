@@ -25,7 +25,7 @@ GBAN_CHATS = set(int(x) for x in os.environ.get("GBAN_CHATS", "").split())
 
 
 async def load_start():
-    count = num_gbanned_users()
+    #count = num_gbanned_users()
     LOGGER.info(f"United System Started")
     LOGGER.info("[INFO]: STARTED")
     LOGGER.info(f"LOG CHANNELS: {int(LOG_CHANNEL_ID)}")
