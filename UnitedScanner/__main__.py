@@ -45,7 +45,7 @@ async def load_start():
         LOGGER.info(f"UserBot wasn't able to semd message in your log channel.\n\nERROR: {e}")
     
 loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
+#asyncio.set_event_loop(loop)
 loop.run_until_complete(load_start())
 loop.close()
 
