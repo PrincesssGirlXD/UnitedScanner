@@ -1,7 +1,7 @@
 from typing import List, Union
 from pyrogram import filters
 
-from Scanner.vars import CMD_OP, SUDO_USERS
+from UnitedScanner.config import CMD_OP, INSPECTORS
 
 
 other_filters = filters.group & ~filters.via_bot & ~filters.forwarded
