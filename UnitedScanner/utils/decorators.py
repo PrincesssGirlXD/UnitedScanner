@@ -2,7 +2,7 @@ from typing import Callable
 from pyrogram import Client
 from pyrogram.types import Message
 
-from Scanner.vars import SUDO_USERS
+from UnitedScanner.config import INSPECTORS
 
 
 def errors(func: Callable) -> Callable:
@@ -15,9 +15,9 @@ def errors(func: Callable) -> Callable:
     return decorator
 
 
-def sudo_users_only(func: Callable) -> Callable:
+def ins_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in SUDO_USERS:
+        if message.from_user.id in INSPECTORS:
             return await func(client, message)
 
     return decorator
