@@ -1,48 +1,35 @@
-import logging
-import time
+import asyncio
+import shlex
 
-from aiohttp import ClientSession
-from pyrogram import Client
+from typing import Tuple
 
-from UnitedScanner.config import API_HASH, API_ID, BOT_TOKEN, SESSION_STRING
+from pyrogram.types import Message
 
-starttime = time.time()
+from functools import wraps
 
-# enable logging
-FORMAT = "[UnitedScanner] %(message)s"
-logging.basicConfig(
-    handlers=[logging.FileHandler("Scanner_logs.txt"), logging.StreamHandler()],
-    level=logging.INFO,
-    format=FORMAT,
-    datefmt="[%X]",
-)
-logging.getLogger("pyrogram").setLevel(logging.INFO)
-logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
+def get_text(message: Message) -> [None, str]:
+    """Extract Text From Commands"""
+    text_to_return = message.text
+    if message.text is None:
+        return None
+    if " " in text_to_return:
+        try:
+            return message.text.split(None, 1)[1]
+        except IndexError:
+            return None
+    else:
+        return None
 
-LOGGER = logging.getLogger('[UnitedScanner]')
-LOGGER.info("UnitedScanner is starting. | Built by DragonEyeGaming.")
-LOGGER.info("Handled by: github.com/Princesssgirlxd (t.me/DragonEyeGaming)")
-
-pbot = Client("UnitedScanner", API_ID, API_HASH, bot_token=BOT_TOKEN)
-ubot = Client("Client", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
-
-aiohttpsession = ClientSession()
-
-pbot.start()
-ubot.start()
-
-bot = pbot.get_me()
-BOT_ID = bot.id
-if bot.last_name:
-    BOT_NAME = bot.first_name + " " + bot.last_name
-else:
-    BOT_NAME = bot.first_name
-BOT_USERNAME = bot.username
-
-ub = ubot.get_me()
-ASS_ID = ub.id
-if ub.last_name:
-    ASS_NAME = ub.first_name + " " + ub.last_name
-else:
-    ASS_NAME = ub.first_name
-ASS_USERNAME = ub.username
+async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
+    """run command in terminal"""
+    args = shlex.split(cmd)
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    return (
+        stdout.decode("utf-8", "replace").strip(),
+        stderr.decode("utf-8", "replace").strip(),
+        process.returncode,
+        process.pid,
+    )
