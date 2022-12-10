@@ -1,4 +1,4 @@
-from UnitedScanner.plugins.stats import get_readable_time
+
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
