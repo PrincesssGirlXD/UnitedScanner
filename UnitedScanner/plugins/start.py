@@ -20,7 +20,9 @@ TIME_DURATION_UNITS = (
 )
 
 
-CAPTION = f"""**Hᴇʟʟᴏ message.from_user.mention()\nI Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.**"""
+CAPTION = f"""Hᴇʟʟᴏ message.from_user.mention()
+I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
+"""
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
