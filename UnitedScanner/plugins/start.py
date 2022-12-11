@@ -20,7 +20,7 @@ TIME_DURATION_UNITS = (
 )
 
 
-CAPTION = f"""Hᴇʟʟᴏ {message.from_user.mention()}
+CAPTION = f"""Hᴇʟʟᴏ {mention()}
 I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ."""
 
 @Client.on_message(command("start") & filters.private)
