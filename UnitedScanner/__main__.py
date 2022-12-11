@@ -3,8 +3,9 @@ import asyncio
 import requests
 
 from pyrogram import Client
+from pytgcalls import idle
 
-from UnitedScanner import LOGGER, pbot, ubot
+from UnitedScanner import LOGGER, pbot, ubot, tbot
 #from Scanner.db.global_bans_db import num_gbanned_users
 from UnitedScanner import API_ID, API_HASH, BOT_TOKEN
 
@@ -34,7 +35,7 @@ async def load_start():
 loop = asyncio.get_event_loop_policy().get_event_loop()
 loop.run_until_complete(load_start())
 
-
+tbot.start(bot_token=BOT_TOKEN)
 #Just in case 
 
 if platform.system()=='lawda':
@@ -45,7 +46,7 @@ Client(
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
-    in_memory=True,
+    in_memory=True, 
     plugins={"root": "UnitedScanner.plugins"},
 ).start()
 idle() 
