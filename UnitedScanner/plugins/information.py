@@ -44,12 +44,12 @@ async def userstatus(user_id):
 
 @bot.on_message(filters.command(["info","userinfo"],["?"]))
 async def userinfo(_, message):
-    
+        
      chat_id = message.chat.id
      user_id = message.from_user.id
      if not message.reply_to_message and len(message.command) == 2:
          
-         
+        try:
             user_id = message.text.split(None, 1)[1]
             user_info = await bot.get_chat(user.id)
             user = await bot.get_chat(user.id)
@@ -64,6 +64,13 @@ async def userinfo(_, message):
             photo = await bot.download_media(user.photo.big_file_id)
             await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
 id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message.id)
+            await asyncio.sleep(3)
+        except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
+            await asyncio.sleep(wait_err.x)
+        except TimeoutError:
+            continue
+        except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
+            continue
     
      elif not message.reply_to_message:
          user_info = await bot.get_chat(user.id)
