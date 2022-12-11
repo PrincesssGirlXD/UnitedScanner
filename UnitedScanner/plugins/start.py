@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 from UnitedScanner.utils.filters import command
-from UnitedScanner.config import SUPPORT_CHAT
+from UnitedScanner.config import SUPPORT_CHAT , START_PIC
 from UnitedScanner import BOT_USERNAME, starttime
 
 START_TIME = datetime.utcnow()
@@ -28,9 +28,7 @@ async def start_(client: Client, message: Message):
     accha = await message.reply("United Scanner Starting ✨")
     await accha.delete()
     await asyncio.sleep(0.1)
-    await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
-    CAPTION
-,
+    await message.reply_text({START_PIC} , CAPTION ,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -49,10 +47,7 @@ async def start_grp(client: Client, message: Message):
     accha = await message.reply("United Scanner Starting ✨")
     await accha.delete()
     await asyncio.sleep(0.1)
-    await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
-        f"""Hᴇʟʟᴏ {message.from_user.mention()}
-I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
-""",
+    await message.reply_text({START_PIC} , CAPTION ,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
