@@ -25,7 +25,7 @@ INFO_TEXT = """
 """
 
 async def userstatus(user_id):
-    user = await bot.get_users(user_id)
+    user = await bot.get_chat(user_id)
     x = user.status
     if x == enums.UserStatus.RECENTLY:
        return "User was seen recently."
@@ -52,7 +52,7 @@ async def userinfo(_, message):
          
             user_id = message.text.split(None, 1)[1]
             user_info = await bot.get_chat(user_id)
-            user = await bot.get_users(user_id)
+            user = await bot.get_chat(user_id)
             rank = user.id in (await INSPECTORS())
             status = await userstatus(user.id)
             id = user_info.id
@@ -67,7 +67,7 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
     
      elif not message.reply_to_message:
          user_info = await bot.get_chat(user_id)
-         user = await bot.get_users(user_id)
+         user = await bot.get_chat(user_id)
          status = await userstatus(user.id)
          id = user_info.id
          dc_id = user.dc_id
@@ -83,7 +83,7 @@ id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.
      elif message.reply_to_message:
          user_id = message.reply_to_message.from_user.id          
          user_info = await bot.get_chat(user_id)
-         user = await bot.get_users(user_id)
+         user = await bot.get_chat(user_id)
          status = await userstatus(user.id)
          id = user_info.id
          dc_id = user.dc_id
