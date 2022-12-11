@@ -1,7 +1,7 @@
 import asyncio 
-from pyrogram import Client, filters
+from pyrogram import Client as bot
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from pyrogram import enums
+from pyrogram import filters , enums
 from UnitedScanner.utils.filters import command
 from UnitedScanner.config import INSPECTORS
 
@@ -54,7 +54,7 @@ async def userinfo(_, message):
             user_id = message.text.split(None, 1)[1]
             user_info = await bot.get_chat(user_id)
             user = await bot.get_users(user_id)
-            rank = user.id in (await RANK())
+            rank = user.id in (await INSPECTORS())
             status = await userstatus(user.id)
             id = user_info.id
             dc_id = user.dc_id
@@ -75,7 +75,7 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
             status = await userstatus(user.id)
             id = user_info.id
             dc_id = user.dc_id
-            rank = user.id in (await RANK())
+            rank = user.id in (await INSPECTORS())
             name = user_info.first_name
             username = user_info.username
             mention = user.mention
@@ -93,7 +93,7 @@ id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.
             status = await userstatus(user.id)
             id = user_info.id
             dc_id = user.dc_id
-            rank = user.id in (await RANK())
+            rank = user.id in (await INSPECTORS())
             name = user_info.first_name
             username = user_info.username
             mention = user.mention
