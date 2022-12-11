@@ -6,7 +6,7 @@ from pyrogram.types import InputMediaPhoto
 from pyrogram import Client as bot
 
 
-@bot.on_message(filters.command("github",config.CMD_OP))
+@bot.on_message(filters.command("github",["/", "?"]))
 async def git(_, message):
     if len(message.command) < 2:
         return await message.reply_text("/github name")
@@ -37,7 +37,7 @@ async def git(_, message):
     os.remove(f"{user}.jpg")
 
 
-@bot.on_message(filters.command("gitdl",config.CMD_OP))
+@bot.on_message(filters.command("gitdl",["/" , "?"]))
 async def githubdl(_, message):
      if len(message.command) <2:
          return await message.reply_text("`give me GitHub repository url`")
