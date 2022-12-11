@@ -17,5 +17,7 @@ LOG_CHANNEL_ID = os.environ.get("LOG_CHANNEL_ID", -1001583123595)
 
 INSPECTORS = set(int(x) for x in os.environ.get("INSPECTORS", "").split())
 INSPECTORS.add(OWNER_ID)
-INSPECTORS = list(INSPECTORS)
+INSPECTORS = list(INSPECTORS) 
+ENFS = set(int(x) for x in os.environ.get("ENFS", "").split()) 
+ENFS = list(ENFS) 
 GBAN_CHATS = set(int(x) for x in os.environ.get("GBAN_CHATS", "").split())
