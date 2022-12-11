@@ -64,9 +64,9 @@ async def userinfo(_, message):
             photo = await bot.download_media(user.photo.big_file_id)
             await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
 id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message.id)
-            await asyncio.sleep(5)
+            await asyncio.sleep(10)
         except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-            await asyncio.sleep(wait_err.100)
+            await asyncio.sleep(wait_err.x)
         except TimeoutError:
             continue
         except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
@@ -87,9 +87,9 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
              photo = await bot.download_media(user.photo.big_file_id)
              await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
-             await asyncio.sleep(5)
+             await asyncio.sleep(10)
          except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-             await asyncio.sleep(wait_err.100)
+             await asyncio.sleep(wait_err.x)
          except TimeoutError:
              continue
          except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
@@ -110,9 +110,9 @@ id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.
              photo = await bot.download_media(message.reply_to_message.from_user.photo.big_file_id)
              await bot.send_photo(chat_id,photo=photo,caption=INFO_TEXT.format(
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
-             await asyncio.sleep(5)
+             await asyncio.sleep(10)
          except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-             await asyncio.sleep(wait_err.100)
+             await asyncio.sleep(wait_err.x)
          except TimeoutError:
              continue
          except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
