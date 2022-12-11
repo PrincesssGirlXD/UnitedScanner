@@ -48,5 +48,7 @@ Client(
     in_memory=True,
     plugins={"root": "UnitedScanner.plugins"},
 ).start()
+idle() 
+loop.close() 
 
 
