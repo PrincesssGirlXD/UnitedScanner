@@ -1,9 +1,10 @@
-import asyncio 
+import asyncio
+from UnitedScanner import * 
 from pyrogram import Client as bot
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram import filters , enums
 from UnitedScanner.utils.filters import command
-from UnitedScanner.config import INSPECTORS
+from UnitedScanner.config import *
 
 
 INFO_TEXT = """
