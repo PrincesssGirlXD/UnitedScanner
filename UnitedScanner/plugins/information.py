@@ -41,12 +41,13 @@ async def userstatus(user_id):
     
 
 
+while true:
 
 @bot.on_message(filters.command(["info","userinfo"],["?"]))
 async def userinfo(_, message):        
      chat_id = message.chat.id
      user_id = message.from_user.id
-while true:
+
      if not message.reply_to_message and len(message.command) == 2:        
         try:
             user_id = message.text.split(None, 1)[1]
