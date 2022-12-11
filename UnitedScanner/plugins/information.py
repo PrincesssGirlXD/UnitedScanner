@@ -24,7 +24,7 @@ INFO_TEXT = """
 `note were sends you necessary information about user not at all`!
 """
 
-async def userstatus(user.id):
+async def userstatus(user_id):
     user = await bot.get_chat(user.id)
     x = user.status
     if x == enums.UserStatus.RECENTLY:
