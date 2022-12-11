@@ -81,8 +81,7 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
          
      elif message.reply_to_message:
-          user_id = message.reply_to_message.from_user.id
-          
+         user_id = message.reply_to_message.from_user.id          
          user_info = await bot.get_chat(user_id)
          user = await bot.get_users(user_id)
          status = await userstatus(user.id)
