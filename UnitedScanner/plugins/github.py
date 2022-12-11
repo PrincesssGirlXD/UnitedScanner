@@ -1,9 +1,9 @@
 import os
-import config
+from UnitedScanner.config import *
 from requests import get
 from pyrogram import filters
 from pyrogram.types import InputMediaPhoto
-from NandhaBot import bot
+from pyrogram import Client as bot
 
 
 @bot.on_message(filters.command("github",config.COMMANDS))
