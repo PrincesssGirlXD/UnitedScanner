@@ -1,9 +1,10 @@
-import config
-
-from pyrogram import filters
+import asyncio 
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram import enums
-from NandhaBot import bot
-from NandhaBot.rank import RANK_USERS as RANK
+from UnitedScanner.utils.filters import command
+from UnitedScanner.config import INSPECTORS
+
 
 INFO_TEXT = """
 𝗨𝗦𝗘𝗥𝗦𝗧𝗔𝗧𝗨𝗦:
@@ -42,7 +43,7 @@ async def userstatus(user_id):
 
 
 
-@bot.on_message(filters.command(["info","userinfo"],config.COMMANDS))
+@bot.on_message(filters.command(["info","userinfo"],config.INSPECTORS))
 async def userinfo(_, message):
     
      chat_id = message.chat.id
