@@ -22,8 +22,8 @@ TIME_DURATION_UNITS = (
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
     await message.reply_text("United Scanner Starting ✨")
-    await message.sleep(1)
     await message.delete()
+    await message.sleep()
     await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
         f"""Hᴇʟʟᴏ {message.from_user.mention()}
 I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
@@ -43,8 +43,8 @@ I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇ
 @Client.on_message(command("start") & ~filters.private)
 async def start_grp(client: Client, message: Message):
     await message.reply_text("United Scanner Starting ✨")
-    await message.sleep(1)
     await message.delete()
+    await message.sleep()
     await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
         f"""Hᴇʟʟᴏ {message.from_user.mention()}
 I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
