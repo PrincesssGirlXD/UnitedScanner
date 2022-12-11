@@ -66,7 +66,7 @@ async def userinfo(_, message):
 id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message.id)
             await asyncio.sleep(5)
         except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-            await asyncio.sleep(wait_err.x)
+            await asyncio.sleep(wait_err.500)
         except TimeoutError:
             continue
         except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
@@ -89,7 +89,7 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
              await asyncio.sleep(5)
          except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-             await asyncio.sleep(wait_err.x)
+             await asyncio.sleep(wait_err.500)
          except TimeoutError:
              continue
          except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
@@ -112,7 +112,7 @@ id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
              await asyncio.sleep(5)
          except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-             await asyncio.sleep(wait_err.x)
+             await asyncio.sleep(wait_err.500)
          except TimeoutError:
              continue
          except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
