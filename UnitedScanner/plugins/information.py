@@ -75,25 +75,25 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
      elif not message.reply_to_message:
         try:
             user_info = await bot.get_chat(user.id)
-             user = await bot.get_chat(user.id)
-             status = await userstatus(user.id)
-             id = user_info.id
-             dc_id = user.dc_id
-             rank = user.id in (await INSPECTORS())
-             name = user_info.first_name
-             username = user_info.username
-             mention = user.mention
-             bio = user_info.bio
-             photo = await bot.download_media(user.photo.big_file_id)
-             await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
+            user = await bot.get_chat(user.id)
+            status = await userstatus(user.id)
+            id = user_info.id
+            dc_id = user.dc_id
+            rank = user.id in (await INSPECTORS())
+            name = user_info.first_name
+            username = user_info.username
+            mention = user.mention
+            bio = user_info.bio
+            photo = await bot.download_media(user.photo.big_file_id)
+            await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
-             await asyncio.sleep(10)
-         except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
-             await asyncio.sleep(wait_err.x)
-         except TimeoutError:
-             continue
-         except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
-             continue
+            await asyncio.sleep(10)
+        except pyrogram.errors.exceptions.flood_420.FloodWait as wait_err:
+            await asyncio.sleep(wait_err.x)
+        except TimeoutError:
+            continue
+        except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
+            continue
      elif message.reply_to_message:
          try:
              user_id = message.reply_to_message.from_user.id          
