@@ -26,9 +26,9 @@ async def start_(client: Client, message: Message):
     await accha.delete()
     await asyncio.sleep(0.1)
     await message.reply_video("https://telegra.ph/file/9932f4f3cb8518a20e19c.mp4" , 
-        f"""Hᴇʟʟᴏ {message.from_user.mention()}
+        "Hᴇʟʟᴏ {message.from_user.mention()}
 I Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ.
-""",
+",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
