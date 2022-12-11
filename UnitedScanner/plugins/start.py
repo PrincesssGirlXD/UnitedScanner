@@ -20,7 +20,7 @@ TIME_DURATION_UNITS = (
 )
 
 
-CAPTION = "Hᴇʟʟᴏ message.from_user.mention()\nI Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ."""
+CAPTION = "Hᴇʟʟᴏ message.from_user.mention()\nI Wɪʟʟ Hᴇʟᴘ Yᴏᴜ Tᴏ Pʀᴏᴛᴇᴄᴛ Yᴏᴜ Fʀᴏᴍ Pᴏᴛᴇɴᴛɪᴀʟ Tʜʀᴇᴀᴛ."
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
@@ -28,7 +28,7 @@ async def start_(client: Client, message: Message):
     accha = await message.reply("United Scanner Starting ✨")
     await accha.delete()
     await asyncio.sleep(0.1)
-    await message.reply_text({START_PIC} , CAPTION ,
+    await message.reply_video({START_PIC} , CAPTION ,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -47,7 +47,7 @@ async def start_grp(client: Client, message: Message):
     accha = await message.reply("United Scanner Starting ✨")
     await accha.delete()
     await asyncio.sleep(0.1)
-    await message.reply_text({START_PIC} , CAPTION ,
+    await message.reply_video({START_PIC} , CAPTION ,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
