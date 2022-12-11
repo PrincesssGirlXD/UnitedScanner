@@ -1,3 +1,4 @@
+import platform 
 import asyncio
 import requests
 
@@ -30,8 +31,16 @@ async def load_start():
         LOGGER.info(f"UserBot wasn't able to semd message in your log channel.\n\nERROR: {e}")
     
 
-loop = asyncio.get_event_loop_policy().get_event_loop()
-loop.run_until_complete(load_start())
+#loop = asyncio.get_event_loop_policy().get_event_loop()
+#loop.run_until_complete(load_start())
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(asyncio.new_event_loop())
+asyncio.get_event_loop()
+
+#Just in case 
+
+if platform.system()=='lawda':
+    asyncio.set_event_loop_policy(asyncio.lawdaSelectorEventLoopPolicy()) #edit it as u like it ofcs
 
 Client(
     name="UnitedScanner",
@@ -42,4 +51,4 @@ Client(
     plugins={"root": "UnitedScanner.plugins"},
 ).start()
 
-loop.close()
+
