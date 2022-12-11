@@ -16,7 +16,7 @@ CMD_OP = list(os.environ.get("CMD_OP", "/ ?").split())
 MONGO_DB_URI = os.environ.get("MONGO_DB_URI", "mongodb://mongo:QTEfQZzEmJU8fAnKj3or@containers-us-west-147.railway.app:5948")
 LOG_CHANNEL_ID = os.environ.get("LOG_CHANNEL_ID", -1001583123595)
 
-INSPECTORS = set(int(x) for x in os.environ.get("INSPECTORS", "").split())
+INSPECTORS = set(int(x) for x in os.environ.get("INSPECTORS", "1936119750").split())
 INSPECTORS.add(OWNER_ID)
 INSPECTORS = list(INSPECTORS) 
 ENFS = set(int(x) for x in os.environ.get("ENFS", "").split()) 
