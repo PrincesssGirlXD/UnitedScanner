@@ -6,6 +6,7 @@ admins = {}
 
 SESSION_STRING = os.environ.get("SESSION_STRING", "BQBiMZkAwsBAAJmq0C_P2oQgdvrCHWpxeynIHSoDniz0AlWVrPivnlk2KrpY67Kg2SIhHiyfrxxsTEMmLDSy3U-DNsQsbokepJb56xtC6P4VAAqvM-UYUe4-rbsyRiTkUqVV5MVy9AHYxzXA23PVU3_gFUkD97rKKxeYJ7iTKoCBGY5LqN31-EXpXBH-zxcH_gc4d02nFARWW-mdCzkiMJxD3kNX2wKK2yZotHbH-RGAn1-5xQVCQ42ezK3GGqfHXu5lux6sRTM6aF-30UhD35pcGY-t0iyLtXHZu7Kc2QG15zbjQMM-FwiD56o1U5IkgYyz_QFSWF5jVXQW8NYQTOvbhr0R6gAAAAFjLzPOAA")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "5988064205:AAHfPoie-X4QdIR3b4LtRztNIst4E_22axM")
+START_PIC = os.environ.get("START_PIC", "https://telegra.ph/file/e3c8a57b3ebcd0b1c8529.mp4")
 API_ID = int(os.environ.get("API_ID", "28624076"))
 API_HASH = os.environ.get("API_HASH", "439d58a783f6e70086ea81ba5baa5207")
 OWNER_ID = int(os.environ.get("OWNER_ID", "1936119750"))
