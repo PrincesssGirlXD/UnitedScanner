@@ -67,7 +67,7 @@ async def userinfo(_, message):
             await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
 id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message.id)
          except Exception as e:
-              await message.reply_text(str(e))
+              await message.reply_text("failed")
     
      elif not message.reply_to_message:
          try:
@@ -85,7 +85,7 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
             await bot.send_photo(chat_id,photo=photo, caption=INFO_TEXT.format(
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
          except Exception as e:
-              await message.reply_text(str(e))
+              await message.reply_text("failed")
      elif message.reply_to_message:
           user_id = message.reply_to_message.from_user.id
           try:
@@ -103,4 +103,4 @@ id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.
             await bot.send_photo(chat_id,photo=photo,caption=INFO_TEXT.format(
 id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.id)
           except Exception as e:
-              await message.reply_text(str(e))
+              await message.reply_text("failed")
