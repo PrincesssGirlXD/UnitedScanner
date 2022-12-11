@@ -47,8 +47,8 @@ async def userinfo(_, message):
         
      chat_id = message.chat.id
      user_id = message.from_user.id
-     if not message.reply_to_message and len(message.command) == 2:
-while true:         
+while true:
+     if not message.reply_to_message and len(message.command) == 2:        
         try:
             user_id = message.text.split(None, 1)[1]
             user_info = await bot.get_chat(user.id)
@@ -73,7 +73,6 @@ id,name, username, mention, status, rank,dc_id, bio),reply_to_message_id=message
             continue
     
      elif not message.reply_to_message:
-while true:
         try:
             user_info = await bot.get_chat(user.id)
             user = await bot.get_chat(user.id)
@@ -96,7 +95,6 @@ id,name, username, mention,status,rank, dc_id, bio),reply_to_message_id=message.
         except pyrogram.errors.exceptions.bad_request_400.UsernameNotOccupied:
             continue
      elif message.reply_to_message:
-while true:
          try:
              user_id = message.reply_to_message.from_user.id          
              user_info = await bot.get_chat(user.id)
