@@ -2,8 +2,8 @@ import os
 
 from pyrogram import filters
 from pyrogram import Client as bot
-from pyrogram.types import Message as chat
-from pyrogram.types import Chat 
+from pyrogram.types import Message
+from pyrogram.types import Chat as chat
 from UnitedScanner.config import INSPECTORS
 from UnitedScanner.utils import sections
 
@@ -11,9 +11,9 @@ from UnitedScanner.utils import sections
 
 async def get_user_info(user, already=False):
     if not already:
-        chat_id = chat.id
-        userss = await bot.get_chat(chat_id)
-        user = await bot.get_users(chat_id)
+        user_id = user.id
+        userss = await bot.get_chat(user_id)
+        user = await bot.get_users(user_id)
     if not user.first_name:
         return ["Deleted account", None]
     user_id = user.id
@@ -50,8 +50,8 @@ async def info_func(_, message: Message):
     m = await message.reply_text("Information Processing...")
 
     try:
-        chat_id = chat.id
-        info_caption, photo_id = await get_user_info(chat_id)
+        user_id = user.id
+        info_caption, photo_id = await get_user_info(user_id)
     except Exception as e:
         return await m.edit(str(e))
 
