@@ -79,6 +79,7 @@ async def info_func(_, message: Message):
     m = await message.reply_text("Information Processing...")
 
     try:
+        chat_id = chat.id
         info_caption, photo_id = await get_user_info(chat_id)
     except Exception as e:
         return await m.edit(str(e))
