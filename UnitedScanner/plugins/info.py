@@ -10,6 +10,7 @@ from UnitedScanner.utils import sections
 
 async def get_user_info(user, already=False):
     if not already:
+        chat_id = chat.id
         userss = await bot.get_chat(chat_id)
         user = await bot.get_users(chat_id)
     if not user.first_name:
