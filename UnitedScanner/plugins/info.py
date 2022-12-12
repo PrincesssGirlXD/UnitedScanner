@@ -41,7 +41,7 @@ async def get_chat_info(chat, already=False):
     if not already:
         chat_id = chat.id
         chat = await bot.get_chat(chat_id)
-    user_id = user.id
+    chat_id = chat.id
     username = chat.username
     title = chat.title
     type_ = chat.type
