@@ -10,8 +10,8 @@ from UnitedScanner.utils import sections
 
 async def get_user_info(user, already=False):
     if not already:
-        userss = await bot.get_chat(user)
-        user = await bot.get_users(user)
+        userss = await bot.get_chat(chat_id)
+        user = await bot.get_users(chat_id)
     if not user.first_name:
         return ["Deleted account", None]
     user_id = user.id
@@ -38,7 +38,7 @@ async def get_user_info(user, already=False):
 
 async def get_chat_info(chat, already=False):
     if not already:
-        chat = await bot.get_chat(chat)
+        chat = await bot.get_chat(chat_id)
     chat_id = chat.id
     username = chat.username
     title = chat.title
@@ -77,7 +77,7 @@ async def info_func(_, message: Message):
     m = await message.reply_text("Information Processing...")
 
     try:
-        info_caption, photo_id = await get_user_info(user)
+        info_caption, photo_id = await get_user_info(chat_id)
     except Exception as e:
         return await m.edit(str(e))
 
