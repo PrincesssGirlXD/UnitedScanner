@@ -2,8 +2,8 @@ import os
 
 from pyrogram import filters
 from pyrogram import Client as bot
-from pyrogram.types import Message 
-from pyrogram.types import Chat as chat
+from pyrogram.types import Message as chat
+from pyrogram.types import Chat 
 from UnitedScanner.config import INSPECTORS
 from UnitedScanner.utils import sections
 
