@@ -37,37 +37,6 @@ async def get_user_info(user, already=False):
     return [caption, photo_id]
 
 
-async def get_chat_info(chat, already=False):
-    if not already:
-        chat_id = chat.id
-        chat = await bot.get_chat(chat_id)
-    chat_id = chat.id
-    chat = await bot.get_chat(chat_id)
-    username = chat.username
-    title = chat.title
-    type_ = chat.type
-    is_scam = chat.is_scam
-    description = chat.description
-    members = chat.members_count
-    is_restricted = chat.is_restricted
-    link = f"[Link](t.me/{username})" if username else "Null"
-    dc_id = chat.dc_id
-    photo_id = chat.photo.big_file_id if chat.photo else None
-    body = {
-        "✪ ID": chat_id,
-        "✪ DC": dc_id,
-        "✪ Type": type_,
-        "✪ Name": [title],
-        "✪ Username": [("@" + username) if username else "Null"],
-        "✪ Mention": [link],
-        "✪ Members": members,
-        "✪ Scam": is_scam,
-        "✪ Restricted": is_restricted,
-        "✪ Description": [description],
-    }
-    caption = section("Chat info", body)
-    return [caption, photo_id]
-
 @bot.on_message(filters.command("info"))
 async def info_func(_, message: Message):
     if message.reply_to_message:
