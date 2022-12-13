@@ -10,12 +10,12 @@ from UnitedScanner.utils.filters import command
 #from UnitedScanner.db import global_bans_db as db
 
 def extract_gban(message):
-    hmmm = message.split("-i")[1]
+    hmmm = message.split("-id")[1]
     hmm = hmmm.split("-r")  
     id = int(hmm[0].split()[0].strip())
-    reason = hmm[1].split("-united")[0].strip()
-    proof = hmm[1].split("-united")[1].strip()
-    return id, reason, united
+    reason = hmm[1].split("-p")[0].strip()
+    proof = hmm[1].split("-p")[1].strip()
+    return id, reason, proof
 
 @ubot.on_message(command("scan"))
 async def scan(_, message: Message):
