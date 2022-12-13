@@ -45,14 +45,14 @@ async def scan(_, message: Message):
         await message.reply_text("Fool! You can't attack Telegram's native tech!")
         return
     
-    if db.is_user_gbanned(user_id):
-        await message.reply_text(f"""
-User is already scanned.
-Reason: {db.get_gbanned_user(user_id)["reason"]}
+   # if db.is_user_gbanned(user_id):
+       # await message.reply_text(f"""
+#User is already scanned.
+#Reason: {db.get_gbanned_user(user_id)["reason"]}
 
-Scanned By: {db.get_gbanned_user(user_id)["scanner"]}
-""")
-        return
+#Scanned By: {db.get_gbanned_user(user_id)["scanner"]}
+#""")
+    #    return
 
     for chat_id in GBAN_CHATS:
         await ubot.send_message(
