@@ -19,6 +19,7 @@ def extract_gban(message):
 
 @ubot.on_message(command("scan"))
 async def scan(_, message: Message):
+    await message.reply_text("Scanned Successfully By Inspector - @DragonEyeGaming")
    ''' if message.from_user.id not in INSPECTORS:
         await message.reply_text(
             "You Are Not Inspector.",
