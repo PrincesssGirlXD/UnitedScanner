@@ -5,7 +5,7 @@ from pyrogram.types import Message, ChatMember
 from pyrogram import Client, filters, enums
 
 from UnitedScanner import ASS_ID, BOT_ID, pbot, ubot
-from UnitedScanner.config import LOG_CHANNEL_ID, INSPECTORS
+from UnitedScanner.config import LOG_CHANNEL_ID, INSPECTORS , GBAN_CHATS
 from UnitedScanner.utils.filters import command
 #from UnitedScanner.db import global_bans_db as db
 
