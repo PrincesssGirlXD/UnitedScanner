@@ -24,10 +24,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import time
 
 from telegram import Update, ParseMode
-from telegram.ext import CallbackContext, CommandHandler 
+from telegram.ext import CallbackContext, MessageHandler 
 
 from Shikimori import dispatcher 
-from Shikimori.vars import NETWORK, NETWORK_USERNAME
+from Shikimori.vars import OWNER_USERNAME
 
 def awake(update: Update, context: CallbackContext): 
     hmm = update.effective_message.reply_text("⚡")
@@ -42,18 +42,30 @@ def awake(update: Update, context: CallbackContext):
     hmm.delete()
     time.sleep(2.5)
     update.effective_message.reply_photo(
-    "https://telegra.ph/file/2d176d05674421dd4495f.png",
-    f"""✧ ʜᴇʏʏᴀ,Baby
-ᴍʏꜱᴇʟꜰ ᴋᴜʀᴜᴍɪ, ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ  ♦️
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
-» ᴍʏ ʟᴏᴠᴇ: [ᴋᴀᴛᴛɪᴘᴜɪ](t.me/kattipui)
-» ★ You ᴀɴᴅ I ᴀʀᴇ ʙᴏᴛʜ ᴅᴀᴛɪɴɢ ɪɴ ᴀ ᴠɪʀᴛᴜᴀʟ ᴡᴏʀʟᴅ
-» ★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [{NETWORK}](t.me/{NETWORK_USERNAME})
-» ᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ᴛᴏ ᴛʜɪꜱ ꜱᴜᴘᴇʀɢʀᴏᴜᴘ
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
-×• ᴄʜᴇᴄᴋ ᴏᴜᴛ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʙʏ ᴄʟɪᴄᴋɪɴɢ ʜᴇʟᴘ""",
+    "https://telegra.ph/file/49b9382045dec452d4f4e.jpg",
+    f""" ♦️「 ʟɪᴇᴜᴛᴇɴᴀɴᴛ ᴏᴡɴᴇʀ 」♦️
+
+➖➖➖➖➖➖➖➖➖➖➖➖➖ ࿐•┈────┈•
+
+• ᴏᴡɴᴇʀ : {OWNER_USERNAME}
+
+• ᴄʟɪᴇɴᴛ : ᴘʏʀᴏɢʀᴀᴍ
+
+➖➖➖➖➖➖➖➖➖➖➖➖➖ ࿐•┈────┈•
+
+「 ᴛʜɪꜱ ɪꜱ ᴀ ɢᴏᴅ ʟɪᴋᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ」
+
+•➵࿐•┈────┈•
+
+┊╰─•➢ ꜱᴛᴀᴛꜱ : ᴀ +
+
+┊╰─•➢ ʜᴀʀᴇᴍ : 16
+
+┊╰─•➢ ᴘᴏᴡᴇʀ ʟᴇᴠᴇʟ : ɪɴꜰɪɴɪᴛʏ 
+
+╰───•➢""",
 	parse_mode=ParseMode.MARKDOWN
   )
     hmm1.delete()
 
-dispatcher.add_handler(CommandHandler("awake", awake, run_async=True))
+dispatcher.add_handler(MessageHandler("awake kurumi", awake, run_async=True))
